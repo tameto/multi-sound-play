@@ -22,12 +22,6 @@ function App() {
     src: voice3
   });
 
-  useEffect(() => {
-    setTimeout(() => {
-      bgm1ButtonRef.current.click()
-    }, 5000)
-  },[])
-
   return (
     <div>
       {bgm1Audio}
