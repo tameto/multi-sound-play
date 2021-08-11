@@ -23,11 +23,11 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       bgm1Controls.play()
-    }, 1000)
+    }, 5000)
 
     setTimeout(() => {
       voice1Audio.play()
-    }, 5000)
+    }, 8000)
   },[])
 
 
@@ -39,15 +39,31 @@ function App() {
       {voice3Audio}
       <button onClick={bgm1Controls.pause}>bgm Pause</button>
       <button onClick={bgm1Controls.play}>bgm Play</button>
+      <button onClick={() => bgm1Controls.volume(.1)}>Volume: 10%</button>
+      <button onClick={() => bgm1Controls.volume(.5)}>Volume: 50%</button>
+      <button onClick={() => bgm1Controls.volume(1)}>Volume: 100%</button>
+      <br/>
       <br />
       <button onClick={voice1Controls.pause}>voice1 Pause</button>
       <button onClick={voice1Controls.play}>voice1 Play</button>
+      <button onClick={() => voice1Controls.volume(.1)}>Volume: 10%</button>
+      <button onClick={() => voice1Controls.volume(.5)}>Volume: 50%</button>
+      <button onClick={() => voice1Controls.volume(1)}>Volume: 100%</button>
+      <br/>
       <br />
       <button onClick={voice2Controls.pause}>voice2 Pause</button>
       <button onClick={voice2Controls.play}>voice2 Play</button>
+      <button onClick={() => voice2Controls.volume(.1)}>Volume: 10%</button>
+      <button onClick={() => voice2Controls.volume(.5)}>Volume: 50%</button>
+      <button onClick={() => voice2Controls.volume(1)}>Volume: 100%</button>
+      <br/>
       <br />
       <button onClick={voice3Controls.pause}>voice3 Pause</button>
       <button onClick={voice3Controls.play}>voice3 Play</button>
+      <button onClick={() => voice3Controls.volume(.1)}>Volume: 10%</button>
+      <button onClick={() => voice3Controls.volume(.5)}>Volume: 50%</button>
+      <button onClick={() => voice3Controls.volume(1)}>Volume: 100%</button>
+      <br/>
       <br />
     </div>
   );
