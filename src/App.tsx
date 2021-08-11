@@ -21,14 +21,10 @@ function App() {
   });
 
   useEffect(() => {
-    setTimeout(() => {
+    if (bgm1Controls) {
       bgm1Controls.play()
-    }, 5000)
-
-    setTimeout(() => {
-      voice1Audio.play()
-    }, 8000)
-  },[])
+    }
+  },[bgm1Audio])
 
 
   return (
