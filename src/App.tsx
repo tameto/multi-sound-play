@@ -6,17 +6,17 @@ import voice2 from './sounds/voice2.wav'
 import voice3 from './sounds/voice3.wav'
 
 function App() {
-  const [bgm1Audio, bgm1State, bgm1Controls, bgm1Ref] = useAudio({
+  const [bgm1Audio, _bgm1State, bgm1Controls, _bgm1Ref] = useAudio({
     src: bgm,
-    // autoPlay: true,
+    autoPlay: true,
   });
-  const [voice1Audio, voice1State, voice1Controls, voice1Ref] = useAudio({
+  const [voice1Audio, _voice1State, voice1Controls, _voice1Ref] = useAudio({
     src: voice1
   });
-  const [voice2Audio, voice2State, voice2Controls, voice2Ref] = useAudio({
+  const [voice2Audio, _voice2State, voice2Controls, _voice2Ref] = useAudio({
     src: voice2
   });
-  const [voice3Audio, voice3State, voice3Controls, voice3Ref] = useAudio({
+  const [voice3Audio, _voice3State, voice3Controls, _voice3Ref] = useAudio({
     src: voice3
   });
 
