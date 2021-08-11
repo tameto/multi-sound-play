@@ -1,24 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// @ts-nocheck
+import { useAudio } from 'react-use';
+import bgm from './sounds/bgm.mp3'
+import voice1 from './sounds/voice1.wav'
+import voice2 from './sounds/voice2.wav'
+import voice3 from './sounds/voice3.wav'
 
 function App() {
+  const [bgm1Audio, bgm1State, bgm1Controls, bgm1Ref] = useAudio({
+    src: bgm,
+    // autoPlay: true,
+  });
+  const [voice1Audio, voice1State, voice1Controls, voice1Ref] = useAudio({
+    src: voice1
+  });
+  const [voice2Audio, voice2State, voice2Controls, voice2Ref] = useAudio({
+    src: voice2
+  });
+  const [voice3Audio, voice3State, voice3Controls, voice3Ref] = useAudio({
+    src: voice3
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {bgm1Audio}
+      {voice1Audio}
+      {voice2Audio}
+      {voice3Audio}
+      <button onClick={bgm1Controls.pause}>bgm Pause</button>
+      <button onClick={bgm1Controls.play}>bgm Play</button>
+      <br />
+      <button onClick={voice1Controls.pause}>voice1 Pause</button>
+      <button onClick={voice1Controls.play}>voice1 Play</button>
+      <br />
+      <button onClick={voice2Controls.pause}>voice2 Pause</button>
+      <button onClick={voice2Controls.play}>voice2 Play</button>
+      <br />
+      <button onClick={voice3Controls.pause}>voice3 Pause</button>
+      <button onClick={voice3Controls.play}>voice3 Play</button>
+      <br />
     </div>
   );
 }
