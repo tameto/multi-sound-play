@@ -1,5 +1,5 @@
 // @ts-nocheck
-/* eslint-enable no-unused-vars */
+import { useEffect } from 'react';
 import { useAudio } from 'react-use';
 import bgm from './sounds/bgm.mp3'
 import voice1 from './sounds/voice1.wav'
@@ -9,7 +9,6 @@ import voice3 from './sounds/voice3.wav'
 function App() {
   const [bgm1Audio, _bgm1State, bgm1Controls, _bgm1Ref] = useAudio({
     src: bgm,
-    autoPlay: true,
   });
   const [voice1Audio, _voice1State, voice1Controls, _voice1Ref] = useAudio({
     src: voice1
@@ -20,6 +19,17 @@ function App() {
   const [voice3Audio, _voice3State, voice3Controls, _voice3Ref] = useAudio({
     src: voice3
   });
+
+  useEffect(() => {
+    setTimeout(() => {
+      bgm1Controls.play()
+    }, 1000)
+
+    setTimeout(() => {
+      voice1Audio.play()
+    }, 5000)
+  },[])
+
 
   return (
     <div>
