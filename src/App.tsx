@@ -25,7 +25,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       bgm1ButtonRef.current.click()
-    }, 1000)
+    }, 5000)
   },[])
 
   return (
