@@ -1,12 +1,14 @@
 // @ts-nocheck
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useAudio } from 'react-use';
 import bgm from './sounds/bgm.mp3'
 import voice1 from './sounds/voice1.wav'
 import voice2 from './sounds/voice2.wav'
 import voice3 from './sounds/voice3.wav'
 
+
 function App() {
+  const bgm1ButtonRef = useRef()
   const [bgm1Audio, _bgm1State, bgm1Controls, _bgm1Ref] = useAudio({
     src: bgm,
   });
@@ -21,11 +23,10 @@ function App() {
   });
 
   useEffect(() => {
-    if (bgm1Controls) {
-      bgm1Controls.play()
-    }
-  },[bgm1Audio])
-
+    setTimeout(() => {
+      bgm1ButtonRef.current.click()
+    }, 0)
+  },[])
 
   return (
     <div>
@@ -34,7 +35,7 @@ function App() {
       {voice2Audio}
       {voice3Audio}
       <button onClick={bgm1Controls.pause}>bgm Pause</button>
-      <button onClick={bgm1Controls.play}>bgm Play</button>
+      <button ref={bgm1ButtonRef} onClick={bgm1Controls.play}>bgm Play</button>
       <button onClick={() => bgm1Controls.volume(.1)}>Volume: 10%</button>
       <button onClick={() => bgm1Controls.volume(.5)}>Volume: 50%</button>
       <button onClick={() => bgm1Controls.volume(1)}>Volume: 100%</button>
