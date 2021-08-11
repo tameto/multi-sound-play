@@ -1,4 +1,5 @@
 // @ts-nocheck
+/* eslint-enable no-unused-vars */
 import { useAudio } from 'react-use';
 import bgm from './sounds/bgm.mp3'
 import voice1 from './sounds/voice1.wav'
